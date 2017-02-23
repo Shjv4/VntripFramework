@@ -31,6 +31,20 @@ class VNTTextField: UITextField {
         }
     }
     
+    @IBInspectable var downIconOnRightView: Bool = false {
+        didSet {
+            if downIconOnRightView = true {
+                let bundle = Bundle(for: self)
+                let downIcon = UIImage(named: "DownArrowIcon", in: bundle, compatibleWith: nil)
+                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 18, height: 10))
+                imageView.image = downIcon
+                imageView.contentMode = .left
+                self.rightView = imageView
+                self.rightViewMode = .always
+            }
+        }
+    }
+    
     @IBInspectable var insetX: CGFloat = 0
     
     @IBInspectable var insetY: CGFloat = 0
