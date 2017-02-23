@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for VntripFramework.
 FOUNDATION_EXPORT double VntripFrameworkVersionNumber;
@@ -15,7 +16,6 @@ FOUNDATION_EXPORT double VntripFrameworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char VntripFrameworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <VntripFramework/PublicHeader.h>
-
 
 
 

@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.homepage = "https://github.com/Shjv4/VntripFramework"
   s.source = { :git => "https://github.com/Shjv4/VntripFramework.git", :tag => "#{s.version}"}
   s.framework = "UIKit"
-  s.source_files = "VntripFramework/**/*.{swift,h,m}"
+  s.source_files = "VntripFramework/Classes/*.{swift,h,m}"
   #s.resources = "VntripFramework/**/*.{png,jpeg,jpg,storyboard,xib}"
 end
