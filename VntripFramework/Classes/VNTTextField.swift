@@ -14,6 +14,7 @@ class VNTTextField: UITextField {
     @IBInspectable var leftImage:UIImage? = nil {
         didSet {
             let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 20, height: 20))
+            imageView.contentMode = .center
             imageView.image = leftImage
             self.addSubview(imageView)
         }
@@ -23,6 +24,7 @@ class VNTTextField: UITextField {
         didSet {
 //            rightImage?.renderingMode = .alwaysTemplate
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+            imageView.contentMode = .center
             imageView.image = rightImage
             self.rightViewMode = .always
             self.rightView = imageView

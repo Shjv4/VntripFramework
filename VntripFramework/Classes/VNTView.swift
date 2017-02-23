@@ -25,6 +25,7 @@ class VNTView: UIView {
             self.layer.borderWidth = newValue
         }
     }
+    
     @IBInspectable var borderColor: UIColor? {
         didSet  {
             self.layer.borderColor = borderColor?.cgColor
