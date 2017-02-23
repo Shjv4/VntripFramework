@@ -19,6 +19,16 @@ class VNTTextField: UITextField {
         }
     }
     
+    @IBInspectable var rightImage:UIImage? = nil {
+        didSet {
+//            rightImage?.renderingMode = .alwaysTemplate
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+            imageView.image = rightImage
+            self.rightViewMode = .always
+            self.rightView = imageView
+        }
+    }
+    
     @IBInspectable var insetX: CGFloat = 0
     
     @IBInspectable var insetY: CGFloat = 0
