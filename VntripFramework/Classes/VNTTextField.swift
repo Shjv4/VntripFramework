@@ -23,11 +23,11 @@ class VNTTextField: UITextField {
     @IBInspectable var rightImage:UIImage? = nil {
         didSet {
 //            rightImage?.renderingMode = .alwaysTemplate
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-            imageView.contentMode = .center
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 18, height: 10))
             imageView.image = rightImage
-            self.rightViewMode = .always
+            imageView.contentMode = .left
             self.rightView = imageView
+            self.rightViewMode = .always
         }
     }
     
