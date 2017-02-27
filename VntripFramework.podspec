@@ -4,12 +4,12 @@ Pod::Spec.new do |s|
   s.name = "VntripFramework"
   s.summary = "Vntrip public framwork"
   s.requires_arc = true
-  s.version = "1.0.16"
+  s.version = "1.0.17"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "HoangNA" => "hoang.a.ngo@vntrip.vn" }
   s.homepage = "https://github.com/Shjv4/VntripFramework"
   s.source = { :git => "https://github.com/Shjv4/VntripFramework.git", :tag => "#{s.version}"}
   s.framework = "UIKit"
-  s.source_files = "VntripFramework/Classes/*.{swift,h,m}"
+  s.source_files = "VntripFramework/Classes/*.{swift}"
   s.resources = "VntripFramework/Resources/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 end

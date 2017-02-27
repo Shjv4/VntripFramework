@@ -25,6 +25,7 @@ class VNTTextField: UITextField {
         didSet {
             if let imageView = self.viewWithTag(100) {
                 imageView.frame = leftImageRect!
+                imageView.setNeedsDisplay()
             }
         }
     }
