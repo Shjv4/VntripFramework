@@ -18,7 +18,7 @@ class VNTTextField: UITextField {
             let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 20, height: 20))
             imageView.contentMode = .center
             imageView.image = leftImage?.withRenderingMode(.alwaysTemplate)
-            imageView.tintColor = leftImageBackgroundColor == nil ? leftImageBackgroundColor : UIColor.gray
+            imageView.tintColor = leftImageBackgroundColor != nil ? leftImageBackgroundColor : UIColor.gray
             self.addSubview(imageView)
         }
     }
@@ -42,7 +42,7 @@ class VNTTextField: UITextField {
                 let downIcon = UIImage(named: "DownArrowIcon", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
                 let imageView = UIImageView(frame: CGRect(x: -2, y: 0, width: 16, height: 10))
                 imageView.image = downIcon
-                imageView.tintColor = rightImageBackgroundColor == nil ? rightImageBackgroundColor : UIColor.gray
+                imageView.tintColor = rightImageBackgroundColor != nil ? rightImageBackgroundColor : UIColor.gray
                 imageView.contentMode = .left
                 self.rightView = imageView
                 self.rightViewMode = .always
