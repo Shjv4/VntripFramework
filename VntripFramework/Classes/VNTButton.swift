@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable
 class VNTButton: UIButton {
 
+    /// The corner radius of VNTButton, if > 0 masksToBounds will be set to true
     @IBInspectable var radius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = radius
@@ -19,6 +20,7 @@ class VNTButton: UIButton {
         }
     }
     
+    // The border width of VNTButton
     @IBInspectable var borderWidth: CGFloat {
         get {
             return self.layer.borderWidth
@@ -29,6 +31,7 @@ class VNTButton: UIButton {
         }
     }
     
+    // The border color of VNTButton
     @IBInspectable var borderColor: UIColor? {
         didSet  {
             self.layer.borderColor = borderColor?.cgColor

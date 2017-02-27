@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable
 class VNTView: UIView {
+    /// The corner radius of view, if > 0 masksToBounds will be set to true
     @IBInspectable var radius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = radius
@@ -17,6 +18,7 @@ class VNTView: UIView {
         }
     }
     
+    // The border width of view
     @IBInspectable var borderWidth: CGFloat {
         get {
             return self.layer.borderWidth
@@ -26,6 +28,7 @@ class VNTView: UIView {
         }
     }
     
+    // The border color of view 
     @IBInspectable var borderColor: UIColor? {
         didSet  {
             self.layer.borderColor = borderColor?.cgColor
