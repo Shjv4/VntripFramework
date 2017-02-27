@@ -64,9 +64,9 @@ extension UIColor {
         @alpha color alpha
     */
     convenience init(hexString: String, alpha: Float) {
-        let hex = hexString.trimmingCharacters(in: .alphanumerics.inverted)
+        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
-        Scanner(string: hex).scanHexInt(&int)
+        Scanner(string: hex).scanHexInt32(&int)
         let r, g, b: UInt32
         switch hex.characters.count {
         case 3: // RGB (12-bit)
