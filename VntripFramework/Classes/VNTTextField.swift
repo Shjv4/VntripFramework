@@ -11,19 +11,29 @@ import UIKit
 @IBDesignable
 class VNTTextField: UITextField {
 
-    @IBInspectable var leftImageBackgroundColor:UIColor?
+    @IBInspectable var leftImageBackgroundColor:UIColor? {
+        didSet {
+            if let imageView = self.viewWithTag(100) {
+                imageView.tintColor = leftImageBackgroundColor
+            }
+        }
+    }
     
     @IBInspectable var leftImage:UIImage? = nil {
         didSet {
-            let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 20, height: 20))
+            let imageView = UIImageView(frame: CGRect(x: 10, y: 11, width: 18, height: 18))
             imageView.contentMode = .center
             imageView.image = leftImage?.withRenderingMode(.alwaysTemplate)
-            imageView.tintColor = leftImageBackgroundColor != nil ? leftImageBackgroundColor : UIColor.gray
+            imageView.tag = 100
             self.addSubview(imageView)
         }
     }
     
-    @IBInspectable var rightImageBackgroundColor:UIColor?
+    @IBInspectable var rightImageBackgroundColor:UIColor? {
+        didSet {
+            self.rightView?.tintColor = rightImageBackgroundColor
+        }
+    }
     
     @IBInspectable var rightImage:UIImage? = nil {
         didSet {
@@ -40,9 +50,8 @@ class VNTTextField: UITextField {
             if downIconOnRightView == true {
                 let bundle = Bundle(for: self.classForCoder)
                 let downIcon = UIImage(named: "DownArrowIcon", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-                let imageView = UIImageView(frame: CGRect(x: -2, y: 0, width: 16, height: 10))
+                let imageView = UIImageView(frame: CGRect(x: 2, y: 0, width: 16, height: 10))
                 imageView.image = downIcon
-                imageView.tintColor = rightImageBackgroundColor != nil ? rightImageBackgroundColor : UIColor.gray
                 imageView.contentMode = .left
                 self.rightView = imageView
                 self.rightViewMode = .always
