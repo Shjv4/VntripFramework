@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.name = "VntripFramework"
   s.summary = "Vntrip public framwork"
   s.requires_arc = true
-  s.version = "1.0.10"
+  s.version = "1.0.11"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "HoangNA" => "hoang.a.ngo@vntrip.vn" }
   s.homepage = "https://github.com/Shjv4/VntripFramework"

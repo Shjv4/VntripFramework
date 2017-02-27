@@ -11,20 +11,24 @@ import UIKit
 @IBDesignable
 class VNTTextField: UITextField {
 
+    @IBInspectable var leftImageBackgroundColor:UIColor?
+    
     @IBInspectable var leftImage:UIImage? = nil {
         didSet {
             let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 20, height: 20))
             imageView.contentMode = .center
-            imageView.image = leftImage
+            imageView.image = leftImage?.withRenderingMode(.alwaysTemplate)
+            imageView.tintColor = leftImageBackgroundColor == nil ? leftImageBackgroundColor : UIColor.gray
             self.addSubview(imageView)
         }
     }
     
+    @IBInspectable var rightImageBackgroundColor:UIColor?
+    
     @IBInspectable var rightImage:UIImage? = nil {
         didSet {
-//            rightImage?.renderingMode = .alwaysTemplate
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 18, height: 10))
-            imageView.image = rightImage
+            let imageView = UIImageView(frame: CGRect(x: -2, y: 0, width: 16, height: 10))
+            imageView.image = rightImage?.withRenderingMode(.alwaysTemplate)
             imageView.contentMode = .left
             self.rightView = imageView
             self.rightViewMode = .always
@@ -35,9 +39,10 @@ class VNTTextField: UITextField {
         didSet {
             if downIconOnRightView == true {
                 let bundle = Bundle(for: self.classForCoder)
-                let downIcon = UIImage(named: "DownArrowIcon", in: bundle, compatibleWith: nil)
-                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 18, height: 10))
+                let downIcon = UIImage(named: "DownArrowIcon", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+                let imageView = UIImageView(frame: CGRect(x: -2, y: 0, width: 16, height: 10))
                 imageView.image = downIcon
+                imageView.tintColor = rightImageBackgroundColor == nil ? rightImageBackgroundColor : UIColor.gray
                 imageView.contentMode = .left
                 self.rightView = imageView
                 self.rightViewMode = .always
