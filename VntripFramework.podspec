@@ -1,7 +1,7 @@
 Pod::Spec.new do |s| 
 
 s.name         = "VntripFramework"
-s.version      = "1.0.20"
+s.version      = "1.0.21"
 s.summary      = "Vntrip public framwork"
 s.homepage     = "https://github.com/Shjv4/VntripFramework"
 #s.screenshot  = ".png"
