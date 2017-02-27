@@ -33,8 +33,8 @@ class VNTTextField: UITextField {
     
     @IBInspectable var downIconOnRightView: Bool = false {
         didSet {
-            if downIconOnRightView = true {
-                let bundle = Bundle(for: self)
+            if downIconOnRightView == true {
+                let bundle = Bundle(for: self.classForCoder)
                 let downIcon = UIImage(named: "DownArrowIcon", in: bundle, compatibleWith: nil)
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 18, height: 10))
                 imageView.image = downIcon

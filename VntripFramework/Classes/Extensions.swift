@@ -8,9 +8,12 @@
 
 import UIKit
 
-extension UIView {
-
+extension Array where Element: Equatable {
+    mutating func removeObject(object: Element) {
+        if let index = index(of: object) {
+            remove(at: index)
+        }
+    }
 }
-
 
 
