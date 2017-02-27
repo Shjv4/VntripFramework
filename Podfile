@@ -8,7 +8,7 @@ target 'VntripFramework' do
   # Pods for VntripFramework
 
   target 'VntripFrameworkTests' do
-    inherit! :search_paths
+      #inherit! :search_paths
     # Pods for testing
   end
 
