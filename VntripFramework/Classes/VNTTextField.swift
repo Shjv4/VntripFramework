@@ -20,6 +20,15 @@ class VNTTextField: UITextField {
         }
     }
     
+    /// The frame of left image view
+    @IBInspectable var leftImageRect:CGRect? = nil {
+        didSet {
+            if let imageView = self.viewWithTag(100) {
+                imageView.frame = leftImageRect!
+            }
+        }
+    }
+    
     /// The image of left view
     @IBInspectable var leftImage:UIImage? = nil {
         didSet {
@@ -41,9 +50,9 @@ class VNTTextField: UITextField {
     /// The image of right view
     @IBInspectable var rightImage:UIImage? = nil {
         didSet {
-            let imageView = UIImageView(frame: CGRect(x: -5, y: 0, width: 16, height: 10))
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 22, height: 14))
             imageView.image = rightImage?.withRenderingMode(.alwaysTemplate)
-            imageView.contentMode = .left
+            imageView.contentMode = .center
             self.rightView = imageView
             self.rightViewMode = .always
         }
@@ -55,7 +64,7 @@ class VNTTextField: UITextField {
             if downIconOnRightView == true {
                 let bundle = Bundle(for: self.classForCoder)
                 let downIcon = UIImage(named: "DownArrowIcon", in: bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-                let imageView = UIImageView(frame: CGRect(x: -5, y: 0, width: 16, height: 10))
+                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 22, height: 14))
                 imageView.image = downIcon
                 imageView.contentMode = .left
                 self.rightView = imageView
